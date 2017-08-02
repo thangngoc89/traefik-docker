@@ -3,12 +3,13 @@ version: '2'
 services:
   proxy:
     image: traefik:latest
-    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
+    # command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
+    restart: "always"
     networks:
       - webgateway
     ports:
       - "80:80"
-      # - "443:443"
+      - "443:443"
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
