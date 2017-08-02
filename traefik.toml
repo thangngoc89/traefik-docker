@@ -4,7 +4,7 @@ defaultEntryPoints = ["http", "https"]
 [web]
 # Port for the status page
 address = ":8080"
-ReadOnly = true
+# ReadOnly = true
 [web.auth.basic]
   users = ["khoa:$apr1$Sjn2aNT/$GmFE3Gj2pyqnDdoi.QaJ81"]
 # Entrypoints, http and https
@@ -13,22 +13,22 @@ ReadOnly = true
 # http should be redirected to https
 [entryPoints.http]
 address = ":80"
-[entryPoints.http.redirect]
-entryPoint = "https"
+# [entryPoints.http.redirect]
+# entryPoint = "https"
 
 # https is the default
-[entryPoints.https]
-address = ":443"
-[entryPoints.https.tls]
+# [entryPoints.https]
+# address = ":443"
+# [entryPoints.https.tls]
 
 # Enable ACME (Let's Encrypt): automatic SSL
-[acme]
+# [acme]
 # caServer = "https://acme-staging.api.letsencrypt.org/directory"
-email = "hi@khoanguyen.me"
-storage = "acme.json" # or "traefik/acme/account" if using KV store
-entryPoint = "https"
-onDemand = false
-OnHostRule = true
+# email = "hi@khoanguyen.me"
+# storage = "acme.json" # or "traefik/acme/account" if using KV store
+# entryPoint = "https"
+# onDemand = false
+# OnHostRule = true
 
 
 [docker]
