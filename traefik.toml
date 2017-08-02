@@ -4,7 +4,8 @@ defaultEntryPoints = ["http", "https"]
 [web]
 # Port for the status page
 address = ":8080"
-
+[web.auth.basic]
+  users = ["khoa:$apr1$Sjn2aNT/$GmFE3Gj2pyqnDdoi.QaJ81"]
 # Entrypoints, http and https
 [entryPoints]
 
